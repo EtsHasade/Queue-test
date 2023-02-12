@@ -14,9 +14,15 @@ function loadFromStorage(key) {
     return JSON.parse(dataStr || null)
 }
 
+function getRandomInt(min, max) {
+    min = parseInt(min)   
+    max = parseInt(max)       
+    return parseInt(Math.random() * (max - min) + min)
+}
 
 
 export const utilService = {
     saveToStorage,
-    loadFromStorage
+    loadFromStorage,
+    getRandomInt
 }

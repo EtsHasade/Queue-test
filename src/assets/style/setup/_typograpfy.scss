@@ -1,9 +1,18 @@
-// @font-face {
-//     font-family: 'Raleway';
-//     src: url(https://fonts.google.com/specimen/Raleway);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-// }
-// @font-face {
-//     font-family: 'open sens';
-//     src: url(https://fonts.google.com/specimen/Open+Sans);
-// }
+
+.bold {
+    font-family: Roboto;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+.bold-2 {
+    font-family: Roboto;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.bold-3 {
+    font-weight: 700;
+}

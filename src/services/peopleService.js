@@ -1,4 +1,7 @@
-import httpService from './httpService'
+// import httpService from './httpService'
+import {storageService} from './storegService'
+import { utilService } from './utilService'
+
 
 export const peopleService = {
     add,
@@ -8,24 +11,35 @@ export const peopleService = {
 }
 
 
-const CAT_ENTITY = 'peoples'
+const PEOPLE_ENTITY = 'peoples'
+_createDb()
+
 
 async function query(criteria) {
     console.log("🚀 ~ file: peopleQueryService.js:16 ~ query ~ criteria", criteria)
-    const peoples = await httpService.get(CAT_ENTITY, criteria)
+    const peoples = await storageService.get(PEOPLE_ENTITY, criteria)
     return peoples || []
 }
 
 function getById(peopleId) {
-    return httpService.get(`${CAT_ENTITY}/${peopleId}`)
+    return storageService.get(`${PEOPLE_ENTITY}/${peopleId}`, 'email')
 }
 
-function remove(peopleId) {
-    return httpService.delete(`${CAT_ENTITY}/${peopleId}`)
+function remove(peopleEmail) {
+    console.log("🚀 ~ file: peopleService.js:29 ~ remove ~ peopleEmail", peopleEmail)    
+    return storageService.remove(`${PEOPLE_ENTITY}/${peopleEmail}`, 'email')
 }
 function add(people) {
-    return httpService.post(CAT_ENTITY, people)
+    return storageService.post(PEOPLE_ENTITY, people)
 }
 
-
+async function _createDb() {
+    const peoples = utilService.loadFromStorage(PEOPLE_ENTITY) || null
+    if (!peoples) {
+        const db = await import('../../data/db.json')
+        const defaultPeoples = db.peoples
+        storageService.setCollectionEntities(PEOPLE_ENTITY, defaultPeoples)
+    }       
+    
+}
 

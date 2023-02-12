@@ -1,9 +1,46 @@
-
 .people-preview {
-    .table-item {
-        display: flex;  
-        flex-grow: 1;      
+    border-bottom: 1px solid $gray5;
+
+    .field {
+        display: flex;
+        align-items: center;
+        gap: 1.3ch;
+        padding: $main-padding 0;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        &.loader {
+            padding: $main-padding 0;
+
+            span {
+                @include loader;
+            }
+        }
+    }
+
+    .name {
+        img {
+            width: 40px;
+            aspect-ratio: 1;
+        }
     }
 
 
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: $secondary-padding;
+        border: none;
+        color: $gray3;
+        transform: translateX(100%);
+
+    }
+
+    &:hover {
+        background-color: $gray6;
+        .btn {
+            transform: translateX(0);
+        }
+    }
 }

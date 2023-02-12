@@ -1,6 +1,33 @@
-
 .people-list-header {
     display: flex;
     justify-content: space-between;
-    padding: 1rem 0;
+    align-items: center;
+
+    .search-members {
+        padding: calc($secondary-padding * 2);
+        color: $gray5;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        gap: 10.5px;
+        border: 1px solid $gray5;
+        border-radius: $border-radius-em;
+
+        .icon {
+            height: 1.5em;
+            width: 1.5em;
+        }
+
+        input {
+
+            border: none;
+        }
+    }
+
+    .btn {
+        .icon {
+            font-size: 19px;
+        }
+        font-size: 13px;
+    }
 }

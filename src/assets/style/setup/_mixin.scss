@@ -35,3 +35,31 @@
         @content;
     }
 }
+
+@mixin skeleton {
+    transition: 1s; 
+    
+    &.loader {
+        @include loader;
+    }
+    
+    .loader {
+        @include loader;
+    }
+}
+
+@mixin loader {
+    border-radius: $border-radius-em;
+    animation: loader-skeleton 1s infinite alternate-reverse;
+}
+
+@keyframes loader-skeleton {
+    from {
+        background-color: $gray4;
+        color: $gray4;
+    }
+    to {
+        background-color: $gray5;
+        color: $gray5;
+    }
+}

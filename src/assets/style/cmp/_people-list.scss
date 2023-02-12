@@ -1,14 +1,45 @@
-
 .people-list {
+    height: 100%;
+    overflow-y: hidden;
+
     .table-header {
-        border-bottom: 1px solid $gray4;
+        border-bottom: 1px solid $gray5;
+        font-size: 1.2rem;
     }
+
     .table-item {
-        display: flex;  
+        display: flex;
         min-width: max-content;
         flex-wrap: wrap;
-        flex-grow: 1;    
-        justify-content: start;  
+        flex-grow: 1;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .table-rows {
+        overflow-y: auto;
+        height: 100%;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+
+    .field {
+        &.name {
+            padding-inline-start: $main-padding;
+            // width: 30%;
+            width: 29ch;
+        }
+
+        &.email {
+            width: 23ch;;
+        }
+
+        &.status {
+            flex-grow: 1;
+        }
     }
 
 

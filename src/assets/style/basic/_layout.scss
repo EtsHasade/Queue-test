@@ -1,7 +1,7 @@
 .main-layout {
     display: grid;
     grid-template-rows: auto 1fr;
-    grid-template-columns: minmax(1rem, $main-padding) auto 1fr 1rem;
+    grid-template-columns: minmax(1rem, $main-padding) max-content minmax(300px, 900px) 1fr 1rem;
     column-gap: $main-padding;
     row-gap: calc($main-padding * 3);
 
@@ -30,4 +30,13 @@
             grid-column: -2;
         }
     }
+}
+
+.page {
+    height: 100%;
+    display: grid;
+    overflow-y: hidden;
+    grid-template-rows: auto auto 1fr;
+    gap: 1.5rem;
+
 }

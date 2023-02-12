@@ -1,24 +1,46 @@
 import Loader from "./Loader";
 import ErrorMsg from "./ErrorMsg";
 import PeoplePreview from "./PeoplePreview";
+import { utilService } from "../services/utilService";
+import Modal from "./Modal";
+import { useState } from "react";
+import RemoveMsg from "./RemoveMsg";
 
-const fields = [
-  { label: 'Name', key: 'name' , width: '40%'},
-  { label: 'Email', key: 'email', width: '30%'},
-  { label: 'Status', key: 'status' },
+const createSkeleton = () => ({
+  email: '-'.repeat(utilService.getRandomInt(15, 25)),
+  firstName: '-'.repeat(utilService.getRandomInt(5, 10)),
+  lastName: '-'.repeat(utilService.getRandomInt(8, 15)),
+  status: '-'.repeat(utilService.getRandomInt(8, 12))
+})
+
+const skeletons = [
+  createSkeleton(),
+  createSkeleton(),
+  createSkeleton(),
 ]
 
 export default function PeopleList({ peoples, isLoading, isError }) {
+  const [msg, setMsg] = useState('Welcome')
+  const displayPeoples = peoples || skeletons
+
+  const onRemove = (peopleEmail) => {
+    setMsg(() => <RemoveMsg memberEmail={peopleEmail}/>)
+  }
+
   return (
     <section className="people-list">
-      <header className="table-header table-item">
-        {fields.map(field => <h5 style={{width: field.width}}>{field.label}</h5>)}
+      <header className="table-header table-item bold">
+        <h5 className="name field" >Name</h5>
+        <h5 className="email field" >Email</h5>
+        <h5 className="status field" >Status</h5>
       </header>
-      <ul className="people-list table-rows clean-list">
-        {isLoading &&  <Loader />}
+      <ul className="table-rows clean-list">
         {isError && <ErrorMsg />}
-        {peoples?.map(people => <PeoplePreview key={people.id} fields={fields} people={people} />)}
+        {displayPeoples.map((people, idx) => <PeoplePreview key={idx} isLoading={isLoading} people={people} onRemove={onRemove} />)}
       </ul>
+      {msg && <Modal closeModal={()=>setMsg(null)}>
+        <div className="msg">{msg}</div>
+      </Modal>}
     </section>
   )
 }

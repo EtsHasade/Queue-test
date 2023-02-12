@@ -1,15 +1,18 @@
 
-export default function Dashboard() {
+export default function Dashboard({ peoples }) {
+    const activeCount = peoples?.filter(({ status }) => status === 'approved').length ?? '-------'
+    const pendingCount = peoples?.filter(({ status }) => status === 'pending').length ?? '-------'
+
     return (
         <section className="dashboard flex gap8">
-            <item className="active">
-                <h3>7</h3>
+            <article className={'active'}>
+                <h3  className={'skeleton ' + ((peoples) ? 'value' : 'loader')}>{activeCount}</h3>
                 <h4>Active</h4>
-            </item>
-            <item className="active">
-                <h3>20</h3>
+            </article>
+            <article className={'pending'}>
+                <h3 className={'skeleton ' + ((peoples) ? 'value' : 'loader')}>{pendingCount}</h3>
                 <h4>Pending</h4>
-            </item>
+            </article>
         </section>
     )
 }

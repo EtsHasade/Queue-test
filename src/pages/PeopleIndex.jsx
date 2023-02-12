@@ -1,19 +1,21 @@
+import { useState } from 'react'
 import Dashboard from '../cmps/Dashboard'
 import PeopleList from '../cmps/PeopleList'
 import PeopleListHeader from '../cmps/PeopleListHeader'
-import usePeoplesQuery from '../hooks/usePeoplesQuery'
+import {usePeoplesQuery, usePeoplesRemove} from '../hooks/usePeoples'
 
 
 
 export default function PeopleIndex() {
-    const { isLoading, isError, data: peoples } = usePeoplesQuery()
+    const [searchTerm, setSearchTerm] = useState('')
+    const { isLoading, isError, data: peoples } = usePeoplesQuery({txt: searchTerm})
 
 
 
     return (
         <>
-            <Dashboard />
-            <PeopleListHeader />
+            <Dashboard peoples={peoples}/>
+            <PeopleListHeader onFilter={setSearchTerm}/>
             <PeopleList peoples={peoples} isLoading={isLoading} isError={isError} />
         </>
     )
