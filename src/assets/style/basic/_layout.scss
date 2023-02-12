@@ -1,0 +1,33 @@
+.main-layout {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: minmax(1rem, $main-padding) auto 1fr 1rem;
+    column-gap: $main-padding;
+    row-gap: calc($main-padding * 3);
+
+    @include for-normal-layout{
+        column-gap: calc($main-padding * 2);
+    }
+
+    @include for-wide-layout{
+        column-gap: calc($main-padding * 3);
+    }
+
+    >* {
+        grid-column: 3;
+    }
+
+    .full {
+        grid-column: 1/-1;
+    }
+
+    .side {
+        &-start {
+            grid-column: 2;
+        }
+
+        &-end {
+            grid-column: -2;
+        }
+    }
+}

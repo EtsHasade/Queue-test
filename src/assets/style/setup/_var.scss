@@ -1,0 +1,40 @@
+$clr1: #07132c; //new
+$clr2: #0B1524; //new
+$clr3: #63E1D9; //new
+
+$main-txt-color: #101010;
+$main-bg-color: #ffffff;
+$secondary-txt-color: #ffffff;
+$secondary-bg-color: #3A41DF;
+$third-bg-color: #B13B52;
+$highlight-bg-color: #FFC000;
+$contrast-bg-color: #B13B52;
+
+
+$gray1: #272727;
+$gray2: #4b4b4b;
+$gray3: #878787;
+$gray4: #a9a9a9;
+$gray5: #efefef;
+
+$disabled-bg-color: $gray5;
+$disabled-txt-color: $gray4;
+
+$clr-error: #f41818;
+$clr-success: #74f418;
+$clr-warning: $highlight-bg-color;
+
+
+
+// LAYOUT BREAKPOINTS
+$break-narrow: 700px;
+$break-normal: 890px;
+$break-wide: 1000px;
+
+//global padding and spacing
+$main-padding: 21px;
+$border-radius-1: 12px;
+$border-radius-em: .2em;
+
+//global sizes cmp 
+$app-header-height: 200px

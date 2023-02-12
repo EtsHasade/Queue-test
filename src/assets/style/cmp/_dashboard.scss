@@ -1,0 +1,13 @@
+.dashboard {
+    
+    item {
+        display: grid;
+        place-items: center;
+        place-content: center;
+        height: 96px;
+        width: 154px;
+        border: 1px solid $secondary-bg-color;
+        border-radius: $border-radius-1;
+    }
+
+}

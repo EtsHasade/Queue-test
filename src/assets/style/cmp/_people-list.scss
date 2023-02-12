@@ -1,0 +1,15 @@
+
+.people-list {
+    .table-header {
+        border-bottom: 1px solid $gray4;
+    }
+    .table-item {
+        display: flex;  
+        min-width: max-content;
+        flex-wrap: wrap;
+        flex-grow: 1;    
+        justify-content: start;  
+    }
+
+
+}

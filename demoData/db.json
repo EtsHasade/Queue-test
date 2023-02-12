@@ -1,0 +1,70 @@
+{
+    "peoples": [
+        {
+            "email": "Jake@Miller.co",
+            "firstName": "Jake",
+            "lastName": "Miller",
+            "status": "approved"
+        },
+        {
+            "email": "JenniferRBoyce@jourrapide.com",
+            "firstName": "Jennifer",
+            "lastName": "Boyce",
+            "status": "pending"
+        },
+        {
+            "email": "AshleyOHoang@armyspy.com",
+            "firstName": "Ashley",
+            "lastName": "Hoang",
+            "status": "pending"
+        },
+        {
+            "email": "PatrickJWashington@dayrep.com",
+            "firstName": "Patrick",
+            "lastName": "Washington",
+            "status": "approved"
+        },
+        {
+            "email": "Jake@Miller.co",
+            "firstName": "Jake",
+            "lastName": "Miller",
+            "status": "approved"
+        },
+        {
+            "email": "JackCHenderson@rhyta.com",
+            "firstName": "Jack",
+            "lastName": "Henderson",
+            "status": "approved"
+        },
+        {
+            "email": "WilliamJZavala@teleworm.us",
+            "firstName": "William",
+            "lastName": "Zavala",
+            "status": "approved"
+        },
+        {
+            "email": "JillianCLane@teleworm.us",
+            "firstName": "Jillian",
+            "lastName": "Lane",
+            "status": "pending"
+        },
+        {
+            "email": "DonovanCStreetman@dayrep.com",
+            "firstName": "Donovan",
+            "lastName": "Streetman",
+            "status": "approved"
+        },
+        {
+            "email": "CharlesCLundy@teleworm.us",
+            "firstName": "Charles",
+            "lastName": "Lundy",
+            "status": "approved"
+        },
+        {
+            "email": "JefferyJSalas@rhyta.com",
+            "firstName": "Jeffery",
+            "lastName": "Salas",
+            "status": "approved"
+        }
+    ]
+}
