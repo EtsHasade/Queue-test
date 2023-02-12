@@ -1,5 +1,4 @@
-// import httpService from './httpService'
-import {storageService} from './storegService'
+import { storageService } from './storegService'
 import { utilService } from './utilService'
 
 
@@ -16,7 +15,6 @@ _createDb()
 
 
 async function query(criteria) {
-    console.log("🚀 ~ file: peopleQueryService.js:16 ~ query ~ criteria", criteria)
     const peoples = await storageService.get(PEOPLE_ENTITY, criteria)
     return peoples || []
 }
@@ -26,7 +24,6 @@ function getById(peopleId) {
 }
 
 function remove(peopleEmail) {
-    console.log("🚀 ~ file: peopleService.js:29 ~ remove ~ peopleEmail", peopleEmail)    
     return storageService.remove(`${PEOPLE_ENTITY}/${peopleEmail}`, 'email')
 }
 function add(people) {
@@ -39,7 +36,7 @@ async function _createDb() {
         const db = await import('../../data/db.json')
         const defaultPeoples = db.peoples
         storageService.setCollectionEntities(PEOPLE_ENTITY, defaultPeoples)
-    }       
-    
+    }
+
 }
 

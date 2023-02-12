@@ -60,11 +60,9 @@ async function put(entityType, updatedEntity) {
 }
 
 async function remove(entityUrl, key = 'id') {
-    console.log("🚀 ~ file: storegservice.js:63 ~ remove ~ key", key)
     const [entityKey, entityIdKey] = entityUrl.split('/')
     const entities = await _query(entityKey);
     const idx = entities.findIndex(entity => entity[key] === entityIdKey);
-    console.log("🚀 ~ file: storegservice.js:67 ~ remove ~ idx", idx)
     entities.splice(idx, 1);
     _save(entityKey, entities);
 }
